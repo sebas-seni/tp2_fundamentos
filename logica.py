@@ -16,29 +16,20 @@ def imprimir_menu_principal():
         print(f"{i}) {opcion}")
 
 
-def guardar_opcion():
+def pedir_opcion():
+    while True:
+        opcion_elegida = input()
 
-    opcion_elegida = input()
+        if opcion_elegida.isdigit():
+            opcion_elegida = int(opcion_elegida)
+            if 1 <= opcion_elegida < 7:
+                return opcion_elegida
+            elif opcion_elegida == 7:
+                print(constantes.MSG_FIN)
+                break
 
-    if opcion_elegida.isdigit():
-        return int(opcion_elegida)
-    else:
-        return None
-
-
-def gestionar_errores():
-    opcion_guardada = guardar_opcion()
-
-    # Prox: Mientras el valor ingresado no sea correcto, se debe mostrar el menu principal
-    # Si el input es 7, finaliza el programa
-
-    if (
-        (type(opcion_guardada) is not int)
-        or (opcion_guardada < 1)
-        or (opcion_guardada > 7)
-    ):
         print(constantes.MSG_INPUT_INVALIDO)
+        imprimir_menu_principal()
 
 
-# def finalizar_programa():
-#     print(constantes.MSG_FIN) if guardar_opcion == 7 else
+# Implementar crear_cuenta (acordarse de que "**" retrocede al menu principal)

@@ -4,7 +4,7 @@ import logica
 def main():
     logica.imprimir_menu_principal()
     # logica.guardar_opcion()
-    logica.gestionar_errores()
+    logica.pedir_opcion()
     # logica.finalizar_programa()
 
 
